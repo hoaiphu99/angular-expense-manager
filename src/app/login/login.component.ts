@@ -11,14 +11,16 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
-  formData: FormGroup = new FormGroup({
-    username: new FormControl('admin'),
-    password: new FormControl('admin'),
-  });
+  formData: FormGroup;
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.formData = new FormGroup({
+      username: new FormControl('admin'),
+      password: new FormControl('admin'),
+    });
+  }
 
   onClickSubmit(data: any) {
     this.username = data.username;

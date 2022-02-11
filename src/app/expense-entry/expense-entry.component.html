@@ -6,9 +6,10 @@
         <div class="row">
           <div class="col-sm" style="text-align: left;">{{ title }}</div>
           <div class="col-sm" style="text-align: right;">
-            <button type="button" class="btn btn-primary" on-click="show()">
-              Edit
+            <button type="button" class="btn btn-primary" (click)="goToList()">
+              Go to List
             </button>
+            <button type="button" class="btn btn-primary">Edit</button>
           </div>
         </div>
       </div>

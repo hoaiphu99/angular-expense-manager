@@ -12,6 +12,13 @@ import { ExpenseEntryService } from '../expense-entry.service';
 export class ExpenseEntryListComponent implements OnInit {
   title: string;
   expenseEntries: ExpenseEntry[];
+  displayedColumns: string[] = [
+    'item',
+    'amount',
+    'category',
+    'location',
+    'spendOn',
+  ];
 
   constructor(
     private debugService: DebugService,

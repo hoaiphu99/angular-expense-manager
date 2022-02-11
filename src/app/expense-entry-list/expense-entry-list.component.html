@@ -8,31 +8,38 @@
             {{ title }}
           </div>
           <div class="col-sm" style="text-align: right;">
-            <button type="button" class="btn btn-primary">Edit</button>
+            <!-- <button type="button" class="btn btn-primary">Edit</button> -->
+            <button mat-raised-button color="primary">Edit</button>
           </div>
         </div>
       </div>
       <div class="container box" style="margin-top: 10px;">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Amount</th>
-              <th>Category</th>
-              <th>Location</th>
-              <th>Spent On</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let entry of expenseEntries">
-              <th scope="row">{{ entry.item }}</th>
-              <th>{{ entry.amount }}</th>
-              <td>{{ entry.category }}</td>
-              <td>{{ entry.location }}</td>
-              <td>{{ entry.spendOn | date: 'short' }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="mat-elevation-z8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Spent On</th>
+                <th>View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let entry of expenseEntries">
+                <th scope="row">{{ entry.item }}</th>
+                <th>{{ entry.amount }}</th>
+                <td>{{ entry.category }}</td>
+                <td>{{ entry.location }}</td>
+                <td>{{ entry.spendOn | date: 'medium' }}</td>
+                <td>
+                  <a routerLink="../expenses/detail/{{ entry.id }}">View</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

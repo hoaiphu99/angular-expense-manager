@@ -6,7 +6,11 @@
         <div class="row">
           <div class="col-sm" style="text-align: left;">{{ title }}</div>
           <div class="col-sm" style="text-align: right;">
-            <button type="button" class="btn btn-primary" (click)="goToList()">
+            <button
+              type="button"
+              class="btn btn-primary me-2"
+              (click)="goToList()"
+            >
               Go to List
             </button>
             <button type="button" class="btn btn-primary">Edit</button>
@@ -55,10 +59,6 @@
           </div>
         </div>
       </div>
-      <h3>ng-template</h3>
-      <ng-template [ngIf]="true"
-        ><div><h2>ng-template works!</h2></div>
-      </ng-template>
     </div>
   </div>
 </div>

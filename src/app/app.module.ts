@@ -12,6 +12,8 @@ import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
 import { ExpenseEntryListComponent } from './expense-entry-list/expense-entry-list.component';
 import { DebugComponent } from './debug/debug.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ExpenseEntryComponent,
     ExpenseEntryListComponent,
     DebugComponent,
+    LoginComponent,
+    LogoutComponent,
   ],
   bootstrap: [AppComponent],
 })

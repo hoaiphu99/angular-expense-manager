@@ -1,4 +1,5 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'my-app',
@@ -7,5 +8,16 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   title = 'Expense Manager';
-  name = 'Angular ' + VERSION.major;
+  isUserLoggedIn = false;
+
+  constructor(private authService: AuthService) {}
+
+  NgOnInit() {
+    const storeData = localStorage.getItem('isUserLoggedIn');
+    console.log('Store Data:' + storeData);
+
+    if (storeData != null && storeData == 'true') {
+      this.isUserLoggedIn = true;
+    } else this.isUserLoggedIn = false;
+  }
 }

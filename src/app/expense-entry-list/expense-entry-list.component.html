@@ -8,8 +8,10 @@
             {{ title }}
           </div>
           <div class="col-sm" style="text-align: right;">
+            <button class="btn btn-primary" routerLink="/expenses/add">
+              ADD
+            </button>
             <!-- <button type="button" class="btn btn-primary">Edit</button> -->
-            <button mat-raised-button color="primary">Edit</button>
           </div>
         </div>
       </div>
@@ -24,6 +26,8 @@
                 <th>Location</th>
                 <th>Spent On</th>
                 <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -35,6 +39,14 @@
                 <td>{{ entry.spendOn | date: 'medium' }}</td>
                 <td>
                   <a routerLink="../expenses/detail/{{ entry.id }}">View</a>
+                </td>
+                <td>
+                  <a routerLink="../expenses/edit/{{ entry.id }}">Edit</a>
+                </td>
+                <td>
+                  <a href="#" (click)="deleteExpenseEntry($event, entry.id)"
+                    >Delete</a
+                  >
                 </td>
               </tr>
             </tbody>

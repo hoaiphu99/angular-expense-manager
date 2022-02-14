@@ -14,6 +14,9 @@ import { DebugComponent } from './debug/debug.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { EditEntryComponent } from './edit-entry/edit-entry.component';
+import { AboutComponent } from './about/about.component';
+import { ExpenseGuard } from './expense.guard';
 
 @NgModule({
   imports: [
@@ -31,10 +34,13 @@ import { LogoutComponent } from './logout/logout.component';
     HelloComponent,
     ExpenseEntryComponent,
     ExpenseEntryListComponent,
+    EditEntryComponent,
+    AboutComponent,
     DebugComponent,
     LoginComponent,
     LogoutComponent,
   ],
+  providers: [ExpenseGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

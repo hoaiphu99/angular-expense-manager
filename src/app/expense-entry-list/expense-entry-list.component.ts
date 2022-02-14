@@ -36,4 +36,14 @@ export class ExpenseEntryListComponent implements OnInit {
       .getExpenseEntries()
       .subscribe((data) => (this.expenseEntries = data));
   }
+
+  deleteExpenseEntry(evt, id) {
+    evt.preventDefault();
+    if (confirm('Are you sure to delete the entry')) {
+      this.expenseEntryService
+        .deleteExpenseEntry(id)
+        .subscribe((data) => console.log(data));
+      this.getExpenseEntries();
+    }
+  }
 }

@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   onClickSubmit(data: any) {
+    console.log('onSubmit login fired');
     this.username = data.username;
     this.password = data.password;
 

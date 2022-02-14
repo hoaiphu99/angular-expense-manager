@@ -37,6 +37,10 @@ export class ExpenseEntryComponent implements OnInit {
     this.router.navigate(['/expenses']);
   }
 
+  goToEdit() {
+    this.router.navigate(['/expenses/edit', this.selectedId]);
+  }
+
   show(): void {
     console.log('Clicked');
   }
